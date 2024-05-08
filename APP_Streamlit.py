@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 
-#For all the colors inthe background I was used Chat gpt
+#For all the colors in the background I was used Chat gpt
 def set_theme():
     # Update the default Streamlit theme
     st.markdown(
@@ -82,46 +82,8 @@ Suma = 0
 purpose = []
 
 
-for row in df_nuclear.itertuples():
-    if row.data_Purpose not in purpose:
-        purpose.append(row.data_Purpose)
-
-#[DA 2] drop values
-purpose.remove('Se')
-purpose.remove('Sb')
-purpose.remove('Pne:Plo')
-purpose.remove('Pne:V')
-purpose.remove('Nan')
-purpose.remove('Pne/Wr')
-purpose.remove('Se/Wr')
-purpose.remove('Wr/P/Sa')
-purpose.remove('We/Sam')
-purpose.remove('We/Wr')
-purpose.remove('Wr/F/Sa')
-purpose.remove('Wr/Fms')
-purpose.remove('Fms/Wr')
-purpose.remove('Wr/P/S')
-purpose.remove('Wr/F/S')
-purpose.remove('Wr/We/S')
-print(purpose)
-
-#[ST3]
-selected_purpose1 = st.selectbox("Please select the Purpose you would like to know the meaning of", purpose)
 
 
-
-#[PY2] A dictionary where you write code to acces its keys, values or items
-meaning ={}
-meaning['Combat']='The two atomic bombs dropped over'
-meaning['Fms'] ='To study the phenomena of a nuclear explotions'
-meaning['Me'] = 'Test conducted in the context of a military exercise with a real nuclear detonation.'
-meaning['Pne'] = 'Peaceful nuclear explosion.'
-meaning['Sam']='Tests to study accidental modes and emergencies.'
-meaning['Transp'] ='Transportation-storage purposes'
-meaning['We'] ='To evaluate the effects of a nuclear detonation on various targets.'
-meaning['Wr'] = 'related to the weapon development programme.'
-if selected_purpose1:
-    st.write(selected_purpose1,meaning[selected_purpose1])
 
 countries = []
 
