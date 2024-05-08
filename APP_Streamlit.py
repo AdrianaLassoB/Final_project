@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import matplotlib.pyplot as plt
 
 #For all the colors in the background I was used Chat gpt
 def set_theme():
