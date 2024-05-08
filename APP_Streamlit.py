@@ -140,7 +140,7 @@ for row in df_nuclear.itertuples():
     if row.WEAPON_SOURCE_COUNTRY == selected_country:  # Convert year to string for comparison
         Suma += 1
 
-st.write("The country," selected_country, "has dropped a total of", Suma," bombs in between 1945 and 1998")
+st.write("The country", selected_country, "has dropped a total of", Suma," bombs in between 1945 and 1998")
 
 df_selected_country = df_nuclear[df_nuclear['WEAPON_SOURCE_COUNTRY'] == selected_country]
 
