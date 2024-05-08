@@ -118,7 +118,7 @@ st.write("The country", selected_country,"was responsable for", calculate_countr
 
 
 #[EXTRA CREDIT] imported plotly with is a package for more complex graphs
-import plotly.graph_objs as go
+
 
 #[DA 3] FILTER DATA
 selected_country_data = df_nuclear[df_nuclear['WEAPON_SOURCE_COUNTRY'] == selected_country]
@@ -126,20 +126,8 @@ selected_country_data = df_nuclear[df_nuclear['WEAPON_SOURCE_COUNTRY'] == select
 # Count occurrences of each purpose for the selected country
 purpose_counts = selected_country_data['data_Purpose'].value_counts()
 
-#[VIZ2]
-# Create a pie chart for the purpose distribution
-fig = go.Figure(data=[
-    go.Pie(labels=purpose_counts.index, values=purpose_counts.values)
-])
 
-# Customize layout
-fig.update_layout(
-    title=f"Purpose Distribution in {selected_country}"
-)
-
-# Plot the pie chart
-st.plotly_chart(fig, use_container_width=True)
-
+purpose_counts.plot(kind = 'bar')
 
 
 
@@ -152,7 +140,7 @@ for row in df_nuclear.itertuples():
     if row.WEAPON_SOURCE_COUNTRY == selected_country:  # Convert year to string for comparison
         Suma += 1
 
-st.write("The country", selected_country, "has dropped a total of", Suma,"bombs in between 1945 and 1998")
+st.write("The country," selected_country, "has dropped a total of", Suma," bombs in between 1945 and 1998")
 
 df_selected_country = df_nuclear[df_nuclear['WEAPON_SOURCE_COUNTRY'] == selected_country]
 
