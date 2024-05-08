@@ -127,8 +127,9 @@ selected_country_data = df_nuclear[df_nuclear['WEAPON_SOURCE_COUNTRY'] == select
 purpose_counts = selected_country_data['data_Purpose'].value_counts()
 
 
-purpose_counts.plot(kind = 'bar')
-
+purpose_counts.value_counts().plot(kind='bar')
+plt.xlabel("Purpose")
+st.pyplot()
 
 
 
